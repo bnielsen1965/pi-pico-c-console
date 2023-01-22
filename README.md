@@ -88,6 +88,8 @@ Example using screen and a USB-UART connection:
 
 > screen /dev/ttyUSB0 115200
 
+[screencast_usb_uart_console.webm](https://user-images.githubusercontent.com/486139/213902513-57502eb4-6f8a-4d00-b795-98a7c7f43c24.webm)
+
 
 ## Reference Links
 
