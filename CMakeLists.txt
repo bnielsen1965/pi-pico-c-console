@@ -14,4 +14,4 @@ target_link_libraries(console pico_stdlib pico_multicore)
 pico_add_extra_outputs(console)
 
 pico_enable_stdio_uart(console 1)
-pico_enable_stdio_usb(console 0)
+pico_enable_stdio_usb(console 1)

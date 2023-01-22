@@ -55,13 +55,38 @@ With the application saved to the Pi Pico connect the appropriate USB cable for
 the type of connection you are using, USB-UART or the build in USB port, and 
 start your favored terminal application and bind to the correct tty device.
 
-Example using screen and a USB-UART connection:
 
-> screen /dev/ttyUSB0 115200
+### USB Built In
+
+The built in USB port on the Pi Pico can be used as a serial console by 
+enabling stdio usb in the CMakeLists.txt file with the pico sdk macro 
+function *pico_enable_stdio_usb*.
+
+When connected to the workstation with a USB cable the /dev/ttyACM0 device 
+should become available and can then be used with your favored serial 
+terminal application.
 
 Example using screen and the build in USB port:
 
 > screen /dev/ttyACM0
+
+![Example Screencast](./screencast_usb_console.webm)
+
+
+### USB to UART
+
+A USB to UART bridge can be used to connect a workstation to UART0 on the 
+Pi Pico by hooking up a ground wire and the TX and RX lines from the 
+USB-UART bridge to UART0 on the Pi Pico.
+
+![USB-Uart](./pi-pico-console.png)
+
+The USB-UART should show up as a /dev/ttyUSB# device when connected to 
+the workstation, then use your favored serial terminal application.
+
+Example using screen and a USB-UART connection:
+
+> screen /dev/ttyUSB0 115200
 
 
 ## Reference Links
