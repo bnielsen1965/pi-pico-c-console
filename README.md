@@ -7,6 +7,14 @@ The Pi Pico can use the the USB port or UART pins for stdio character input
 and output. With stdio a command line can be programmed into the Pi Pico 
 and a user can enter commands through one of the serial connections.
 
+This demo uses a multicore application to setup a command prompt on the 
+stdio serial port. The second Pi Pico core runs a process that reads input 
+from stdio and echoes the characters back. When enter is received the process 
+releases a semaphore to trigger the command processing thread.
+
+The command processing thread runs on core0 and waits on a semaphore for 
+a command string to process.
+
 Two commands are provided in the demo application, "help" and "bootrom".
 The help command will display a help message in the terminal and the 
 bootrom command will reset the Pi Pico and boot into BOOTSEL mode.
@@ -65,6 +73,11 @@ function *pico_enable_stdio_usb*.
 When connected to the workstation with a USB cable the /dev/ttyACM0 device 
 should become available and can then be used with your favored serial 
 terminal application.
+
+**NOTE:** When using the "bootrom" command while connected on the built in 
+USB port there may be a conflict because the serial terminal application is 
+currently connected to the USB device and resetting the Pi Pico into BOOTSEL 
+mode will attempt to change the USB device to Mass Storage.
 
 Example using screen and the build in USB port:
 
