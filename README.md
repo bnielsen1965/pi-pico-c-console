@@ -70,7 +70,7 @@ Example using screen and the build in USB port:
 
 > screen /dev/ttyACM0
 
-![Example Screencast](./screencast_usb_console.webm)
+[screencast_usb_console.webm](https://user-images.githubusercontent.com/486139/213902273-532058e8-13a0-41ad-a116-e26fb46ec687.webm)
 
 
 ### USB to UART
