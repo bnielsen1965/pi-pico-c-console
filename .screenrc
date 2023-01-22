@@ -1,0 +1,7 @@
+hardstatus alwayslastline
+hardstatus string "F2 19200, F3 115200, F4 quit"
+
+bindkey -k k4 quit
+bindkey -k k2 exec ! stty 19200
+bindkey -k k3 exec ! stty 115200
+
